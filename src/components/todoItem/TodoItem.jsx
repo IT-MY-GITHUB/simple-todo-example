@@ -1,4 +1,4 @@
-import "./TodoItem.scss"
+import './todoItem.scss'
 
 const TodoItem = (props) => {
 
@@ -10,7 +10,7 @@ const TodoItem = (props) => {
           </div>
           <div className="todo__item-control">
             <button className="todo__item-btn todo__item-btn--edit">Edit</button>
-            <button className="todo__item-btn todo__item-btn--delete">Delete</button>
+            <button className="todo__item-btn todo__item-btn--delete" onClick={()=>{props.deleteTask(props.store.id)}} >Delete</button>
           </div>
       </div>
     
