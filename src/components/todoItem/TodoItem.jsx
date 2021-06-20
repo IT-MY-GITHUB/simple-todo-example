@@ -3,9 +3,9 @@ import './todoItem.scss'
 
 const TodoItem = (props) => {
 
-  const showModal = () => {
-    return <Modal/>
-  }
+  // const showModal = () => {
+  //   return <Modal/>
+  // }
 
 
   return (
@@ -15,7 +15,7 @@ const TodoItem = (props) => {
             <p>{props.store.data}</p>
           </div>
           <div className="todo__item-control">
-            <button className="todo__item-btn todo__item-btn--edit"onClick={showModal}>Edit</button>
+            <button className="todo__item-btn todo__item-btn--edit">Edit</button>
             <button className="todo__item-btn todo__item-btn--delete" onClick={()=>{props.deleteTask(props.store.id)}} >Delete</button>
           </div>
         <Modal/>
