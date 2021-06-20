@@ -4,24 +4,21 @@ import TodoItem from '../todoItem/TodoItem'
 
 const Todo = () => {
   const [tasks, setTask] = useState([]);
-  const [id, setId] = useState(0);
 
-  // add task
-  const addTask = async () => {
-    let inputText = document.querySelector('[data-input]');
+  const [input, setinput] = useState(null);
 
-    inputText.value === '' ? inputText.placeholder = 'Enter task description'
-    : await setTask(prevTasks => [...prevTasks, {id: id, data: inputText.value}]);
-
-    setId(prevId => prevId + 1);
-
-    inputText.value = '';
+  const addTask = (event) =>{
+    event.preventDefault()
+    const value = input.target.value
+    setTask(prevTasks => [...prevTasks, {id: Date.now(), data: value}])
   }
-
-  // delete task
   const deleteTask = (id) => {
     setTask(prevTasks => prevTasks.filter(item => item.id !== id));
   }
+
+  
+ 
+
 
 // need rework
   // const editTask = (data) => {
@@ -38,8 +35,11 @@ const Todo = () => {
           <header className="todo__header">
             <h1 className="todo__title">React Todo List</h1> 
             <div className="todo__control">
-              <input className="todo__input" type="text" data-input/>
-              <button onClick={addTask} className="todo__add">Add</button>
+              <form onSubmit={addTask}>
+                <input className="todo__input" onChange={setinput} type="text"/>
+                <button className="todo__add">Add</button>
+              </form>
+              
             </div>
           </header>
           <section className="todo__content">
