@@ -9,8 +9,10 @@ const Todo = () => {
 
   const addTask = (event) =>{
     event.preventDefault()
-    const value = input.target.value
-    setTask(prevTasks => [...prevTasks, {id: Date.now(), data: value}])
+    const value = input.target.value.trim()
+    if(value.length > 2){
+      setTask(prevTasks => [...prevTasks, {id: Date.now(), data: value}])
+    } 
   }
   const deleteTask = (id) => {
     setTask(prevTasks => prevTasks.filter(item => item.id !== id));
