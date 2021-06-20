@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import TodoItem from '../todoItem/TodoItem'
-import './todo.scss'
+//import './todo.scss'
 
 const Todo = () => {
   const [tasks, setTask] = useState([]);

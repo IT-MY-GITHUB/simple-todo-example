@@ -1,5 +1,5 @@
 import Modal from '../modal/Modal'
-import './todoItem.scss'
+//import './todoItem.scss'
 
 const TodoItem = (props) => {
 
