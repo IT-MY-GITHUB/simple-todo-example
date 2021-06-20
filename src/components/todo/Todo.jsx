@@ -43,9 +43,10 @@ const Todo = () => {
             </div>
           </header>
           <section className="todo__content">
-            {tasks.length === 0 ? <h2 className="no-tasks">Add New Task</h2> : tasks.map(task => (
-              <TodoItem deleteTask={deleteTask} key = {task.id} store={task}/>
-            ))}
+            {tasks.length === 0
+             ? <h2 className="no-tasks">Add New Task</h2> 
+             : <TodoItem deleteTask={deleteTask} store={tasks}/>
+            }
           </section>
       </div>
     </div>
