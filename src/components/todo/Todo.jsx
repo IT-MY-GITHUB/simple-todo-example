@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import TodoItem from '../todoItem/TodoItem'
-//import './todo.scss'
+import './todo.scss'
 
 const Todo = () => {
   const [tasks, setTask] = useState([]);
 
-  const [input, setinput] = useState(null);
+  const [input, setInput] = useState(null);
 
   const addTask = (event) =>{
     event.preventDefault()
@@ -19,17 +19,6 @@ const Todo = () => {
   }
 
   
- 
-
-
-// need rework
-  // const editTask = (data) => {
-  //   console.log(data[0], data[1]);
-  //   setTask(prevTasks=> prevTasks.filter(item => {
-  //     if(item.id === id) item.data = data; 
-  //     return item;
-  //   }))
-  // }
   
   return (
     <div>
@@ -37,11 +26,10 @@ const Todo = () => {
           <header className="todo__header">
             <h1 className="todo__title">React Todo List</h1> 
             <div className="todo__control">
-              <form onSubmit={addTask}>
-                <input className="todo__input" onChange={setinput} type="text"/>
+              <form className="todo__form" onSubmit={addTask}>
+                <input className="todo__input" onChange={setInput} type="text"/>
                 <button className="todo__add">Add</button>
               </form>
-              
             </div>
           </header>
           <section className="todo__content">
