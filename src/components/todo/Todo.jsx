@@ -9,9 +9,12 @@ const Todo = () => {
   // add task
   const addTask = async () => {
     let inputText = document.querySelector('[data-input]');
+
     inputText.value === '' ? inputText.placeholder = 'Enter task description'
     : await setTask(prevTasks => [...prevTasks, {id: id, data: inputText.value}]);
+
     setId(prevId => prevId + 1);
+
     inputText.value = '';
   }
 
@@ -20,14 +23,14 @@ const Todo = () => {
     setTask(prevTasks => prevTasks.filter(item => item.id !== id));
   }
 
-
-  const editTask = (data) => {
-    console.log(data[0], data[1]);
-    // setTask(prevTasks=> prevTasks.filter(item => {
-    //   if(item.id === id) item.data = data; 
-    //   return item;
-    // }))
-  }
+// need rework
+  // const editTask = (data) => {
+  //   console.log(data[0], data[1]);
+  //   setTask(prevTasks=> prevTasks.filter(item => {
+  //     if(item.id === id) item.data = data; 
+  //     return item;
+  //   }))
+  // }
   
   return (
     <div>
