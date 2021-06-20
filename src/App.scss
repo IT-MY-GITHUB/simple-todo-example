@@ -1,7 +1,4 @@
-@import "assets/scss/vars";
-@import "assets/scss/mixins";
+@import "assets/scss/_vars";
+@import "assets/scss/_mixins";
 @import "assets/scss/vendors/reset.scss";
 @import "assets/scss/container.scss";
-
-@import "components/todo/Todo.scss";
-@import "components/todoItem/TodoItem.scss";
