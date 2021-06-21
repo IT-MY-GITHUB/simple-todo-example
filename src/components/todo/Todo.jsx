@@ -1,35 +1,10 @@
 import { useState } from 'react'
+import useTodos from '../../hooks/useTodos';
 import TodoItem from '../todoItem/TodoItem'
 //import './todo.scss'
 
 const Todo = () => {
-  const [tasks, setTask] = useState([]);
-
-  const [input, setinput] = useState(null);
-
-  const addTask = (event) =>{
-    event.preventDefault()
-    const value = input.target.value.trim()
-    if(value.length > 2){
-      setTask(prevTasks => [...prevTasks, {id: Date.now(), data: value}])
-    } 
-  }
-  const deleteTask = (id) => {
-    setTask(prevTasks => prevTasks.filter(item => item.id !== id));
-  }
-
-  
- 
-
-
-// need rework
-  // const editTask = (data) => {
-  //   console.log(data[0], data[1]);
-  //   setTask(prevTasks=> prevTasks.filter(item => {
-  //     if(item.id === id) item.data = data; 
-  //     return item;
-  //   }))
-  // }
+  const {store,handlTask} = useTodos()
   
   return (
     <div>
@@ -37,17 +12,17 @@ const Todo = () => {
           <header className="todo__header">
             <h1 className="todo__title">React Todo List</h1> 
             <div className="todo__control">
-              <form onSubmit={addTask}>
-                <input className="todo__input" onChange={setinput} type="text"/>
+              <form onSubmit={handlTask.addTask}>
+                <input className="todo__input" onChange={handlTask.setinput} type="text"/>
                 <button className="todo__add">Add</button>
               </form>
               
             </div>
           </header>
           <section className="todo__content">
-            {tasks.length === 0
+            {store.length === 0
              ? <h2 className="no-tasks">Add New Task</h2> 
-             : <TodoItem deleteTask={deleteTask} store={tasks}/>
+             : <TodoItem store={store} handlTask={handlTask} />
             }
           </section>
       </div>
