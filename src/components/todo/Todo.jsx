@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import useTodos from '../../hooks/useTodos';
 import TodoItem from '../todoItem/TodoItem'
-//import './todo.scss'
+import './Todo.scss'
 
 const Todo = () => {
+
   const {store,handlTask} = useTodos()
-  
+
   return (
     <div>
       <div className="todo">
@@ -16,7 +17,6 @@ const Todo = () => {
                 <input className="todo__input" onChange={handlTask.setinput} type="text"/>
                 <button className="todo__add">Add</button>
               </form>
-              
             </div>
           </header>
           <section className="todo__content">
@@ -26,7 +26,7 @@ const Todo = () => {
             }
           </section>
       </div>
-    </div>
+   </div>
   )
 }
 

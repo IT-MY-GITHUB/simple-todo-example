@@ -1,6 +1,6 @@
 import useTodos from '../../hooks/useTodos'
 import Modal from '../modal/Modal'
-//import './todoItem.scss'
+import './TodoItem.scss'
 
 const TodoItem = ({store,handlTask}) => {
 
