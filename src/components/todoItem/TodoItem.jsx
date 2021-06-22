@@ -1,8 +1,8 @@
-import useTodos from '../../hooks/useTodos'
-import Modal from '../modal/Modal'
-import './TodoItem.scss'
+import useTodos from '../../hooks/useTodos';
+import Modal from '../modal/Modal';
+import './TodoItem.scss';
 
-const TodoItem = ({store,handlTask}) => {
+const TodoItem = ({store,handleTask}) => {
 
 
   // const showModal = () => {
@@ -19,7 +19,7 @@ const TodoItem = ({store,handlTask}) => {
             </div>
             <div className="todo__item-control">
               <button className="todo__item-btn todo__item-btn--edit">Edit</button>
-              <button className="todo__item-btn todo__item-btn--delete" onClick={()=>{handlTask.deleteTask(task.id)}} >Delete</button>
+              <button className="todo__item-btn todo__item-btn--delete" onClick={()=>{handleTask.deleteTask(task.id)}} >Delete</button>
             </div>
           <Modal/>
         </div>

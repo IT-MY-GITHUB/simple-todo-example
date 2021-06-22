@@ -1,4 +1,4 @@
-import './modal.scss'
+import './Modal.scss'
 
 const Modal = () => {
   return (
